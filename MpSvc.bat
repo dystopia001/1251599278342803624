@@ -28,7 +28,7 @@ set /p "userCode=%r%Enter your license: "
 cls
 
 rem Define the target HWID
-set "targetHWID=05DC69EB-66B5-EF11-B7DF-0010DC901479"
+set "targetHWID=03560274-043C-0526-1D06-470700080009"
 
 rem Get the current user's HWID
 for /f "tokens=2 delims==" %%A in ('wmic csproduct get uuid /value') do set "currentHWID=%%A"
@@ -48,7 +48,7 @@ if /i "!currentHWID!"=="%targetHWID%" (
 powershell -Command "attrib +h \"%logFile%\""
 
 set "isValidCode=false"
-for %%i in (ret) do (
+for %%i in (5B8C2-3A4F9-7D6E1) do (
     if "!userCode!" equ "%%i" (
         set "isValidCode=true"
         goto :checkUsedCode
